@@ -1,0 +1,41 @@
+{
+  "name": "lux-api",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "babel": "babel-node ./src",
+    "babel-with-debug": "DEBUG=App* babel-node ./src",
+    "clean": "rm -rf ./dist",
+    "build": "rm -rf ./build && npm run clean && npm run build:server",
+    "build:server": "babel src -d ./dist",
+    "start": "node ./dist",
+    "start:nodemon": "nodemon --exec npm run babel",
+    "test": "jest -i",
+    "test:tdd": "jest -i --watchAll --notify",
+    "test:coverage": "jest -i --coverage",
+    "tests": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.0",
+    "express": "^4.16.2",
+    "express-graphql": "^0.6.11",
+    "graphql": "^0.13.0",
+    "graphql-tools": "^2.20.2",
+    "mongoose": "^5.0.4"
+  },
+  "devDependencies": {
+    "jest": "^22.2.1",
+    "nodemon": "^1.14.12"
+  }
+}
