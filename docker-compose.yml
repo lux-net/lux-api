@@ -1,0 +1,22 @@
+version: '2'
+services:
+  lux:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: node_modules/.bin/nodemon --exec npm run babel-with-debug
+    tty: true
+    environment:
+      MONGODB_URI: 'mongodb://mongo/lux'
+      PORT: 5000
+    ports:
+      - 5000:5000
+    depends_on:
+      - mongo
+    volumes:
+     - .:/home/app/lux
+     - /home/app/lux/node_modules
+  mongo:
+    image: mongo:3.4.10
+    ports:
+      - 27017:27017

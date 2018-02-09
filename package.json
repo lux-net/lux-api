@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "babel": "babel-node ./src",
-    "babel-with-debug": "DEBUG=App* babel-node ./src",
+    "babel-with-debug": "DEBUG=App* npm run babel",
     "clean": "rm -rf ./dist",
     "build": "rm -rf ./build && npm run clean && npm run build:server",
     "build:server": "babel src -d ./dist",
