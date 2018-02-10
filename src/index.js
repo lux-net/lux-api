@@ -5,6 +5,7 @@ import './db'
 
 const app = express()
 
+
 app.get('/', (req, res) => res.send('Let there be light!'))
 app.use(bodyParser.json())
 app.use(graphqlRouter())

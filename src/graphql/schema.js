@@ -8,6 +8,11 @@ type Coordinate {
   updatedAt: String!
 }
 
+input CoordinateInput {
+  latitude: Float
+  longitude: Float
+}
+
 type LightMarker {
   id: ID
   coordinate: Coordinate!
@@ -24,5 +29,9 @@ type Query {
   _allLightMarkersMeta: LightMarkersMeta
   allLightMarkers(first: Int = 50, offset: Int = 0): [LightMarker!]!
   getLightMarker(id: ID): LightMarker!
+}
+
+type Mutation {
+  createLightMarker(coordinate: CoordinateInput!): LightMarker!
 }
 `

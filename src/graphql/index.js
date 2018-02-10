@@ -1,4 +1,3 @@
-
 import { Router } from 'express'
 import graphqlHTTP from 'express-graphql'
 import { makeExecutableSchema } from 'graphql-tools'

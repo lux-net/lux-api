@@ -1,5 +1,7 @@
-serve:
+serve-build:
 	@docker-compose up --build
+serve:
+	@docker-compose up
 install:
 	@docker-compose exec lux npm install $(filter-out $@, $(MAKECMDGOALS))
 build:
