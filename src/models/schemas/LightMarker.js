@@ -3,6 +3,6 @@ import CoordinateSchema from './Coordinate'
 
 export default new Schema({
   iluminated: Boolean,
-  coordinate: {type: CoordinateSchema, default: {latitude:0, longitude:0}},
+  coordinate: { type: CoordinateSchema, default: CoordinateSchema },
   confirmedAt: Date
-}, { timestamps: true }) 
+}, { timestamps: true })

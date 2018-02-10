@@ -7,8 +7,9 @@
   "scripts": {
     "babel": "babel-node ./src",
     "babel-with-debug": "DEBUG=App* npm run babel",
+    "lint": "eslint ./src",
     "clean": "rm -rf ./dist",
-    "build": "rm -rf ./build && npm run clean && npm run build:server",
+    "build": "rm -rf ./build && npm run lint && npm run clean && npm run build:server",
     "build:server": "babel src -d ./dist",
     "start": "node ./dist",
     "start:nodemon": "nodemon --exec npm run babel",
@@ -35,6 +36,12 @@
     "mongoose": "^5.0.4"
   },
   "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^6.0.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
     "jest": "^22.2.1",
     "nodemon": "^1.14.12"
   }
