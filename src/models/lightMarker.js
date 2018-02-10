@@ -1,14 +1,14 @@
 
 import mongoose, { Schema } from 'mongoose'
 
-const CoordinateSchmea = new Schema({
+const CoordinateSchma = new Schema({
   latitude: Number,
   longitude: Number,
 }, { timestamps: true })
 
 const LightMarkerSchema = new Schema({
   iluminated: Boolean,
-  coordinate: CoordinateSchmea,
+  coordinate: CoordinateSchma,
   confirmedAt: Date
 }, { timestamps: true })
 
